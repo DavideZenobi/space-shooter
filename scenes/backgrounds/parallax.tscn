@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyr6ndvweuq10"]
+
+[ext_resource type="Texture2D" uid="uid://ckffrv2yrdot2" path="res://assets/backgrounds/Starfields/Starfield_01-1024x1024.png" id="1_54ryd"]
+
+[node name="Parallax" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+texture_repeat = 2
+repeat_size = Vector2(0, 1024)
+autoscroll = Vector2(0, 120)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+scale = Vector2(1.13, 1.13)
+texture = ExtResource("1_54ryd")
+centered = false

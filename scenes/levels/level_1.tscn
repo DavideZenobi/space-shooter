@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7eeo37r0hsa5"]
+[gd_scene load_steps=3 format=3 uid="uid://b7eeo37r0hsa5"]
 
 [ext_resource type="PackedScene" uid="uid://bfklob58ogw14" path="res://scenes/player/player.tscn" id="1_ty1gb"]
+[ext_resource type="PackedScene" uid="uid://cyr6ndvweuq10" path="res://scenes/backgrounds/parallax.tscn" id="2_wangi"]
 
 [node name="Level1" type="Node"]
 
+[node name="Parallax" parent="." instance=ExtResource("2_wangi")]
+
 [node name="Player" parent="." instance=ExtResource("1_ty1gb")]
-speed = 500
+position = Vector2(577, 540)

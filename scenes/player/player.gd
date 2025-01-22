@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed: int = 500;
-
+var speed: int = 500;
+var back_speed: int = 300;
 var direction: Vector2;
 
 # Called when the node enters the scene tree for the first time.
@@ -16,7 +16,11 @@ func _process(delta):
 
 func _physics_process(delta):
 	get_movement_input();
-	velocity = Vector2(direction.x * speed, direction.y * speed);
+	if direction.y > 0:
+		velocity = Vector2(direction.x * speed, direction.y * back_speed);
+	else:
+		velocity = Vector2(direction.x * speed, direction.y * speed);
+	
 	move_and_slide();
 
 func get_movement_input():
