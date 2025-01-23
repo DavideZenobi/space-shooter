@@ -14,3 +14,6 @@ texture = ExtResource("2_otj2q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_amox1")
+
+[node name="BulletSpawnMark" type="Marker2D" parent="."]
+position = Vector2(0, -38)

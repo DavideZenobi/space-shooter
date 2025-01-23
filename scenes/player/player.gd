@@ -22,6 +22,10 @@ func _physics_process(delta):
 		velocity = Vector2(direction.x * speed, direction.y * speed);
 	
 	move_and_slide();
+	
+	if Input.is_action_pressed("shoot"):
+		
+		pass;
 
 func get_movement_input():
 	direction = Vector2.ZERO;
