@@ -3,11 +3,11 @@ extends CharacterBody2D
 var speed: int = 500;
 var back_speed: int = 300;
 var direction: Vector2;
+@export var current_bullet: PackedScene;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	SceneManager.player = self;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -24,8 +24,8 @@ func _physics_process(delta):
 	move_and_slide();
 	
 	if Input.is_action_pressed("shoot"):
-		
-		pass;
+		SceneManager.spawn_player_bullet(current_bullet, $BulletSpawnMark.global_transform.origin);
+		print("Player position: ", global_transform.origin);
 
 func get_movement_input():
 	direction = Vector2.ZERO;
