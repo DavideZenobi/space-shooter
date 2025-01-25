@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfklob58ogw14"]
+[gd_scene load_steps=7 format=3 uid="uid://bfklob58ogw14"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_34q10"]
 [ext_resource type="Texture2D" uid="uid://bmsqfp7dmatrj" path="res://assets/player_ships/playerShip1_blue.png" id="2_otj2q"]
 [ext_resource type="PackedScene" uid="uid://d2otvq5dhogy4" path="res://scenes/bullets/player_normal_bullet.tscn" id="2_xchlo"]
+[ext_resource type="AudioStream" uid="uid://c3b2mhnjyk58b" path="res://assets/sounds/shoot/sfx_laser1.ogg" id="4_phmi6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amox1"]
+size = Vector2(100, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xphjp"]
 size = Vector2(100, 74)
 
 [node name="Player" type="CharacterBody2D"]
@@ -19,3 +23,14 @@ shape = SubResource("RectangleShape2D_amox1")
 
 [node name="BulletSpawnMark" type="Marker2D" parent="."]
 position = Vector2(0, -38)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_xphjp")
+
+[node name="AudioShoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_phmi6")
+volume_db = -10.0
+pitch_scale = 2.0

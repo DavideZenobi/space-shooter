@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
-var speed: int = 500;
-var back_speed: int = 300;
+var speed: int = 800;
+var back_speed: int = 500;
 var direction: Vector2;
 @export var current_bullet: PackedScene;
 @export var fire_rate: float = 0.1;
 var time_since_last_shoot: float = 0.0;
 
 var screen_size: Vector2;
+
+@onready var audio_shoot: AudioStreamPlayer2D = $AudioShoot;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,6 +35,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("shoot") and time_since_last_shoot <= 0:
 		SceneManager.spawn_player_bullet(current_bullet, $BulletSpawnMark.global_transform.origin);
+		audio_shoot.play();
 		time_since_last_shoot = fire_rate;
 		print("Player position: ", global_transform.origin);
 	else:

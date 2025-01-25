@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7eeo37r0hsa5"]
+[gd_scene load_steps=4 format=3 uid="uid://b7eeo37r0hsa5"]
 
 [ext_resource type="PackedScene" uid="uid://bfklob58ogw14" path="res://scenes/player/player.tscn" id="1_ty1gb"]
 [ext_resource type="PackedScene" uid="uid://cyr6ndvweuq10" path="res://scenes/backgrounds/parallax.tscn" id="2_wangi"]
-[ext_resource type="PackedScene" uid="uid://d2mfaxeb7q3jq" path="res://scenes/pathings/path_straight.tscn" id="3_afi7s"]
 [ext_resource type="PackedScene" uid="uid://c02rn7hxev23d" path="res://scenes/enemies/basic_enemy.tscn" id="3_hwlr8"]
 
 [node name="Level1" type="Node"]
@@ -12,8 +11,5 @@
 [node name="Player" parent="." instance=ExtResource("1_ty1gb")]
 position = Vector2(577, 540)
 
-[node name="PathStraight" parent="." instance=ExtResource("3_afi7s")]
-position = Vector2(531, 187)
-
-[node name="BasicEnemy" parent="PathStraight" instance=ExtResource("3_hwlr8")]
-position = Vector2(-40, 56)
+[node name="BasicEnemy" parent="." instance=ExtResource("3_hwlr8")]
+position = Vector2(569, 216)

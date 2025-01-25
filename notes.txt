@@ -1,0 +1,6 @@
+IDEAS PARA EL FUTURO
+- WaveManager
+	Actualmente: Existe un wavemanager por nivel, con el número de oleadas
+	y toda la info relacionada
+	Futuro: Se puede crear un único wavemanager/singleton y que cargue los 
+	datos de un json o resource dependiendo del nivel

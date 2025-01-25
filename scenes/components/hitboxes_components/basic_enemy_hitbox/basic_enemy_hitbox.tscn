@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://da06s526472wb"]
+
+[ext_resource type="Script" path="res://scenes/components/hitboxes_components/basic_enemy_hitbox/basic_enemy_hitbox.gd" id="1_x0evf"]
+
+[node name="BasicEnemyHitbox" type="Node"]
+script = ExtResource("1_x0evf")

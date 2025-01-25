@@ -6,7 +6,7 @@
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 texture_repeat = 2
-repeat_size = Vector2(0, 1024)
+repeat_size = Vector2(1024, 1024)
 autoscroll = Vector2(0, 120)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
