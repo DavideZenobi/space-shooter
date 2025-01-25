@@ -38,6 +38,10 @@ shape = SubResource("RectangleShape2D_suxvo")
 [node name="HealthComponent" parent="." instance=ExtResource("4_1lmc6")]
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("5_13lwj")]
+offset_left = -49.0
+offset_top = 40.0
+offset_right = 47.0
+offset_bottom = 56.0
 
 [connection signal="area_entered" from="Hitbox" to="BasicEnemyHitbox" method="_on_hitbox_area_entered"]
 [connection signal="health_changed" from="HealthComponent" to="EnemyHealthBar" method="_on_health_changed"]

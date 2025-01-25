@@ -1,11 +1,11 @@
 extends TextureProgressBar
 
-var max_health: int;
+var health_component: HealthComponent;
 
 func initialize(health_component: HealthComponent):
-	
-	pass;
+	self.health_component = health_component;
+	value = 100;
 
 func _on_health_changed():
-	
+	value = health_component.current_health * 100 / health_component.max_health;
 	pass;

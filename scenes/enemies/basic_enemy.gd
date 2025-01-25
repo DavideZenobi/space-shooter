@@ -2,13 +2,14 @@ extends CharacterBody2D
 
 @onready var health_component: HealthComponent = $HealthComponent;
 @onready var health_bar: TextureProgressBar = $EnemyHealthBar;
+@onready var basic_enemy_hitbox: Node = $BasicEnemyHitbox;
 
 var speed = 300.0
 var direction: Vector2 = Vector2.LEFT;
 
 func _ready():
-	
-	pass;
+	health_bar.initialize(health_component);
+	basic_enemy_hitbox.initialize(health_component);
 
 func _physics_process(delta):
 	return;
