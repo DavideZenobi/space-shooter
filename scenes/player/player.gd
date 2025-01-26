@@ -14,6 +14,8 @@ var screen_size: Vector2;
 
 @onready var audio_shoot: AudioStreamPlayer2D = $AudioShoot;
 @onready var health_component: HealthComponent = $HealthComponent;
+@onready var reload_cooldown: Timer = $ReloadCooldown;
+@onready var reload: Timer = $Reload;
 
 func _ready():
 	SceneManager.player = self;
@@ -38,11 +40,12 @@ func _physics_process(delta):
 	position.y = clamp(position.y, 0 + 50, screen_size.y - 50);
 	
 	if Input.is_action_pressed("shoot") and time_since_last_shoot <= 0:
+		reload_cooldown.stop();
 		SceneManager.spawn_player_bullet(current_bullet, $BulletSpawnMark.global_transform.origin);
 		audio_shoot.play();
 		time_since_last_shoot = fire_rate;
 		current_ammo -= 1;
-		print(current_ammo)
+		reload_cooldown.start();
 	
 	if time_since_last_shoot > 0:
 		time_since_last_shoot = clamp(time_since_last_shoot - delta, 0, fire_rate);
@@ -60,6 +63,10 @@ func get_movement_input():
 	
 	direction = direction.normalized();
 
-func refill_ammo():
-	
-	pass;
+func _start_reloading():
+	reload.start();
+
+func _reload_ammo():
+	current_ammo += 1;
+	if current_ammo == max_ammo:
+		reload.stop();

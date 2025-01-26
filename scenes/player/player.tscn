@@ -47,5 +47,19 @@ pitch_scale = 2.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_vqb5c")]
 
+[node name="ReloadCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Reload" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Ammo: "
+
 [connection signal="timeout" from="Sprite2D/BlinkInterval" to="Sprite2D" method="_alternate_blink_effect"]
 [connection signal="timeout" from="Sprite2D/BlinkDuration" to="Sprite2D" method="_stop_blink_effect"]
+[connection signal="timeout" from="ReloadCooldown" to="." method="_start_reloading"]
+[connection signal="timeout" from="Reload" to="." method="_reload_ammo"]
