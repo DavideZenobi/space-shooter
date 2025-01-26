@@ -1,22 +1,26 @@
 extends CharacterBody2D
 
-var speed: int = 800;
-var back_speed: int = 500;
+@export var max_health: int = 100;
+@export var speed: int = 800;
+@export var back_speed: int = 500;
 var direction: Vector2;
 @export var current_bullet: PackedScene;
-@export var fire_rate: float = 0.1;
+@export var fire_rate: float = 0.08;
 var time_since_last_shoot: float = 0.0;
+@export var max_ammo: int = 100;
+var current_ammo: int;
 
 var screen_size: Vector2;
 
 @onready var audio_shoot: AudioStreamPlayer2D = $AudioShoot;
+@onready var health_component: HealthComponent = $HealthComponent;
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	SceneManager.player = self;
 	screen_size = get_viewport_rect().size;
+	health_component.initialize(max_health);
+	current_ammo = max_ammo;
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
@@ -37,10 +41,11 @@ func _physics_process(delta):
 		SceneManager.spawn_player_bullet(current_bullet, $BulletSpawnMark.global_transform.origin);
 		audio_shoot.play();
 		time_since_last_shoot = fire_rate;
-		print("Player position: ", global_transform.origin);
-	else:
-		time_since_last_shoot -= delta;
+		current_ammo -= 1;
+		print(current_ammo)
 	
+	if time_since_last_shoot > 0:
+		time_since_last_shoot = clamp(time_since_last_shoot - delta, 0, fire_rate);
 
 func get_movement_input():
 	direction = Vector2.ZERO;
@@ -54,3 +59,7 @@ func get_movement_input():
 		direction.y += 1;
 	
 	direction = direction.normalized();
+
+func refill_ammo():
+	
+	pass;

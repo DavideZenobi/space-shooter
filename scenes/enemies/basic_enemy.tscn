@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://fvkcg13a8qy" path="res://assets/enemy_ships/enemyRed1.png" id="1_c4owl"]
 [ext_resource type="Script" path="res://scenes/enemies/basic_enemy.gd" id="1_tvgui"]
-[ext_resource type="PackedScene" uid="uid://da06s526472wb" path="res://scenes/components/hitboxes_components/basic_enemy_hitbox/basic_enemy_hitbox.tscn" id="3_4h6mi"]
+[ext_resource type="PackedScene" uid="uid://da06s526472wb" path="res://scenes/components/hitboxes_components/basic_hitbox/basic_hitbox.tscn" id="3_4h6mi"]
 [ext_resource type="PackedScene" uid="uid://dd2maeqfnn4xb" path="res://scenes/components/health_component/health_component.tscn" id="4_1lmc6"]
 [ext_resource type="PackedScene" uid="uid://bmb0q0yhpcb55" path="res://scenes/ui/enemy_health_bar/enemy_health_bar.tscn" id="5_13lwj"]
 
@@ -33,7 +33,7 @@ collision_mask = 5
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_suxvo")
 
-[node name="BasicEnemyHitbox" parent="." instance=ExtResource("3_4h6mi")]
+[node name="BasicHitbox" parent="." instance=ExtResource("3_4h6mi")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_1lmc6")]
 
@@ -43,5 +43,5 @@ offset_top = 40.0
 offset_right = 47.0
 offset_bottom = 56.0
 
-[connection signal="area_entered" from="Hitbox" to="BasicEnemyHitbox" method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="Hitbox" to="BasicHitbox" method="_on_hitbox_area_entered"]
 [connection signal="health_changed" from="HealthComponent" to="EnemyHealthBar" method="_on_health_changed"]

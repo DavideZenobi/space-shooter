@@ -3,10 +3,11 @@ class_name HealthComponent;
 
 signal health_changed;
 
-@export var max_health: int = 50;
+@export var max_health: int;
 var current_health: int;
 
-func _ready():
+func initialize(max_health: int):
+	self.max_health = max_health
 	current_health = max_health;
 
 func damage(attack: Attack):
