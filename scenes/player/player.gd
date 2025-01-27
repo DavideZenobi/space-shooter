@@ -12,6 +12,8 @@ var current_ammo: int;
 
 var screen_size: Vector2;
 
+signal ammo_changed;
+
 @onready var audio_shoot: AudioStreamPlayer2D = $AudioShoot;
 @onready var health_component: HealthComponent = $HealthComponent;
 @onready var reload_cooldown: Timer = $ReloadCooldown;
@@ -46,6 +48,7 @@ func _physics_process(delta):
 		time_since_last_shoot = fire_rate;
 		current_ammo -= 1;
 		reload_cooldown.start();
+		ammo_changed.emit();
 	
 	if time_since_last_shoot > 0:
 		time_since_last_shoot = clamp(time_since_last_shoot - delta, 0, fire_rate);
@@ -70,3 +73,4 @@ func _reload_ammo():
 	current_ammo += 1;
 	if current_ammo == max_ammo:
 		reload.stop();
+	ammo_changed.emit();
