@@ -7,7 +7,7 @@ var direction: Vector2;
 @export var current_bullet: PackedScene;
 @export var fire_rate: float = 0.08;
 var time_since_last_shoot: float = 0.0;
-@export var max_ammo: int = 100;
+@export var max_ammo: int = 30;
 var current_ammo: int;
 
 var screen_size: Vector2;
@@ -41,13 +41,13 @@ func _physics_process(delta):
 	position.x = clamp(position.x, 0 + 50, screen_size.x - 50);
 	position.y = clamp(position.y, 0 + 50, screen_size.y - 50);
 	
-	if Input.is_action_pressed("shoot") and time_since_last_shoot <= 0:
-		reload_cooldown.stop();
+	if Input.is_action_pressed("shoot") and time_since_last_shoot <= 0 and current_ammo > 0:
 		SceneManager.spawn_player_bullet(current_bullet, $BulletSpawnMark.global_transform.origin);
 		audio_shoot.play();
 		time_since_last_shoot = fire_rate;
 		current_ammo -= 1;
 		reload_cooldown.start();
+		reload.stop();
 		ammo_changed.emit();
 	
 	if time_since_last_shoot > 0:
