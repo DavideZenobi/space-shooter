@@ -1,18 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://c02rn7hxev23d"]
+[gd_scene load_steps=6 format=3 uid="uid://c02rn7hxev23d"]
 
 [ext_resource type="Texture2D" uid="uid://fvkcg13a8qy" path="res://assets/enemy_ships/enemyRed1.png" id="1_c4owl"]
 [ext_resource type="Script" path="res://scenes/enemies/basic_enemy.gd" id="1_tvgui"]
-[ext_resource type="PackedScene" uid="uid://da06s526472wb" path="res://scenes/components/hitboxes_components/basic_hitbox/basic_hitbox.tscn" id="3_4h6mi"]
 [ext_resource type="PackedScene" uid="uid://dd2maeqfnn4xb" path="res://scenes/components/health_component/health_component.tscn" id="4_1lmc6"]
 [ext_resource type="PackedScene" uid="uid://bmb0q0yhpcb55" path="res://scenes/ui/enemy_health_bar/enemy_health_bar.tscn" id="5_13lwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfqf8"]
 size = Vector2(91, 81)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_suxvo"]
-size = Vector2(91, 81)
-
 [node name="BasicEnemy" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_tvgui")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -25,16 +22,6 @@ shape = SubResource("RectangleShape2D_dfqf8")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, 42)
 
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_suxvo")
-
-[node name="BasicHitbox" parent="." instance=ExtResource("3_4h6mi")]
-
 [node name="HealthComponent" parent="." instance=ExtResource("4_1lmc6")]
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("5_13lwj")]
@@ -43,5 +30,4 @@ offset_top = 40.0
 offset_right = 47.0
 offset_bottom = 56.0
 
-[connection signal="area_entered" from="Hitbox" to="BasicHitbox" method="_on_hitbox_area_entered"]
 [connection signal="health_changed" from="HealthComponent" to="EnemyHealthBar" method="_on_health_changed"]

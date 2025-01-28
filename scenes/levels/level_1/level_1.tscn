@@ -13,10 +13,10 @@
 position = Vector2(577, 540)
 
 [node name="BasicEnemy" parent="." instance=ExtResource("3_hwlr8")]
-position = Vector2(929, 372)
+position = Vector2(330, 193)
 
 [node name="BasicEnemy2" parent="." instance=ExtResource("3_hwlr8")]
-position = Vector2(671, 366)
+position = Vector2(788, 206)
 
 [node name="Hud" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fuumm")]
 player = NodePath("../Player")

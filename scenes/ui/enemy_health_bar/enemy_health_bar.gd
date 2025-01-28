@@ -8,4 +8,3 @@ func initialize(health_component: HealthComponent):
 
 func _on_health_changed():
 	value = health_component.current_health * 100 / health_component.max_health;
-	pass;

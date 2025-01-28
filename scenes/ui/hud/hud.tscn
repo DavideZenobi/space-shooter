@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7ug7b0trm8tc"]
+[gd_scene load_steps=3 format=3 uid="uid://b7ug7b0trm8tc"]
 
 [ext_resource type="Script" path="res://scenes/ui/hud/hud.gd" id="1_kn4vk"]
+[ext_resource type="Texture2D" uid="uid://4m22jxvhl45h" path="res://assets/ui/ammo_bar/bar_square_gloss_small.png" id="2_i1wfo"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -23,7 +24,9 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="AmmoBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+value = 100.0
+texture_progress = ExtResource("2_i1wfo")
