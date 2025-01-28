@@ -13,6 +13,7 @@ collision_layer = 2
 script = ExtResource("1_tvgui")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
 texture = ExtResource("1_c4owl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -25,9 +26,10 @@ position = Vector2(0, 42)
 [node name="HealthComponent" parent="." instance=ExtResource("4_1lmc6")]
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("5_13lwj")]
-offset_left = -49.0
-offset_top = 40.0
-offset_right = 47.0
-offset_bottom = 56.0
+offset_left = 46.0
+offset_top = 45.0
+offset_right = 142.0
+offset_bottom = 61.0
+rotation = -1.5708
 
 [connection signal="health_changed" from="HealthComponent" to="EnemyHealthBar" method="_on_health_changed"]

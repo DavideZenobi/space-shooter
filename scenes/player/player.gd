@@ -24,6 +24,7 @@ func _ready():
 	screen_size = get_viewport_rect().size;
 	health_component.initialize(max_health);
 	current_ammo = max_ammo;
+	PlayerManager.set_player(self);
 
 func _process(delta):
 	pass
