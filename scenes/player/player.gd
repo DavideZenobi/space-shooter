@@ -31,6 +31,8 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	var mouse_position = get_global_mouse_position();
+	look_at(mouse_position);
 	get_movement_input();
 	if direction.y > 0:
 		velocity = Vector2(direction.x * speed, direction.y * back_speed);
@@ -43,7 +45,7 @@ func _physics_process(delta):
 	position.y = clamp(position.y, 0 + 50, screen_size.y - 50);
 	
 	if Input.is_action_pressed("shoot") and time_since_last_shoot <= 0 and current_ammo > 0:
-		SceneManager.spawn_player_bullet(current_bullet, $BulletSpawnMark.global_transform.origin);
+		SceneManager.spawn_player_bullet(current_bullet, $BulletSpawnMark.global_transform.origin, rotation);
 		audio_shoot.play();
 		time_since_last_shoot = fire_rate;
 		current_ammo -= 1;

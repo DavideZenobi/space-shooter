@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=3 format=3 uid="uid://c2vkso3lvmsud"]
+
+[ext_resource type="Script" path="res://resources/enemies/enemy_resource.gd" id="1_4krm2"]
+[ext_resource type="Texture2D" uid="uid://d2sada3ixmbt4" path="res://assets/enemy_ships/enemyRed2.png" id="2_fydua"]
+
+[resource]
+script = ExtResource("1_4krm2")
+type = 1
+difficulty = 0
+sprite = ExtResource("2_fydua")
+health = 20
+damage = 15

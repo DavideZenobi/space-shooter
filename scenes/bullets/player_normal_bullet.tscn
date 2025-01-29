@@ -10,6 +10,7 @@ size = Vector2(8, 54)
 script = ExtResource("1_2lvbh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource("1_sm44w")
 
 [node name="Hitbox" type="Area2D" parent="."]

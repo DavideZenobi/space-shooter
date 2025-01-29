@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyDatabase" load_steps=9 format=3 uid="uid://ddlymey1wqgte"]
+
+[ext_resource type="Script" path="res://resources/enemies/enemy_resource.gd" id="1_4dx1b"]
+[ext_resource type="Resource" uid="uid://30umqdl18twl" path="res://resources/enemies/lightweight_easy.tres" id="2_r0mkl"]
+[ext_resource type="Resource" uid="uid://caw5nn5m1d0g" path="res://resources/enemies/lightweight_medium.tres" id="3_vcjys"]
+[ext_resource type="Resource" uid="uid://4n2my561k348" path="res://resources/enemies/lightweight_hard.tres" id="4_fhslk"]
+[ext_resource type="Resource" uid="uid://c2vkso3lvmsud" path="res://resources/enemies/tracker_easy.tres" id="5_nxqvp"]
+[ext_resource type="Resource" uid="uid://t56qbrnps80a" path="res://resources/enemies/tracker_medium.tres" id="6_r5ot0"]
+[ext_resource type="Resource" uid="uid://c68jwj5r6bu0w" path="res://resources/enemies/tracker_hard.tres" id="7_s8ofx"]
+[ext_resource type="Script" path="res://resources/enemies/enemy_database.gd" id="8_th2uv"]
+
+[resource]
+script = ExtResource("8_th2uv")
+enemy_types = Array[ExtResource("1_4dx1b")]([ExtResource("2_r0mkl"), ExtResource("3_vcjys"), ExtResource("4_fhslk"), ExtResource("5_nxqvp"), ExtResource("6_r5ot0"), ExtResource("7_s8ofx")])

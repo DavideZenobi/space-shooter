@@ -16,9 +16,15 @@ size = Vector2(100, 74)
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_34q10")
+max_health = null
+speed = null
+back_speed = null
 current_bullet = ExtResource("2_xchlo")
+fire_rate = null
+max_ammo = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource("2_otj2q")
 script = ExtResource("4_u0awx")
 
@@ -33,7 +39,7 @@ one_shot = true
 shape = SubResource("RectangleShape2D_amox1")
 
 [node name="BulletSpawnMark" type="Marker2D" parent="."]
-position = Vector2(0, -38)
+position = Vector2(50, 0)
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 10
