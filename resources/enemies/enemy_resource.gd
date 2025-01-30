@@ -1,21 +1,8 @@
 extends Resource;
-class_name EnemyType;
+class_name EnemyData;
 
-enum Types {
-	LIGHTWEIGHT,
-	TRACKER,
-	TANK,
-	BOMBARDIER
-};
-
-enum Difficulties {
-	EASY,
-	MEDIUM,
-	HARD,
-};
-
-@export var type: Types;
-@export var difficulty: Difficulties;
+@export var type: Constants.EnemyTypes;
+@export var difficulty: Constants.Difficulties;
 @export var sprite: Texture;
 @export var health: int;
 @export var damage: int;
