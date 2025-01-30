@@ -6,9 +6,9 @@ signal health_changed;
 @export var max_health: int;
 var current_health: int;
 
-func initialize(max_health: int):
-	self.max_health = max_health
-	current_health = max_health;
+func initialize(new_max_health: int):
+	self.max_health = new_max_health
+	current_health = new_max_health;
 
 func damage(attack: Attack):
 	current_health -= attack.damage;

@@ -20,7 +20,6 @@ signal ammo_changed;
 @onready var reload: Timer = $Reload;
 
 func _ready():
-	SceneManager.player = self;
 	screen_size = get_viewport_rect().size;
 	health_component.initialize(max_health);
 	current_ammo = max_ammo;

@@ -17,6 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Util="*res://scripts/singletons/util.gd"
+ResourcesDatabase="*res://scripts/singletons/resources_database.gd"
+ScenesDatabase="*res://scripts/singletons/scenes_database.gd"
+SignalBus="*res://scripts/singletons/signal_bus.gd"
 SceneManager="*res://scripts/singletons/scene_manager.gd"
 PlayerManager="*res://scripts/singletons/player_manager.gd"
 

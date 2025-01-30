@@ -11,6 +11,11 @@
 
 [node name="Player" parent="." instance=ExtResource("1_ty1gb")]
 position = Vector2(577, 540)
+max_health = 100
+speed = 800
+back_speed = 500
+fire_rate = 0.08
+max_ammo = 30
 
 [node name="BasicEnemy" parent="." instance=ExtResource("3_hwlr8")]
 position = Vector2(1166, 74)

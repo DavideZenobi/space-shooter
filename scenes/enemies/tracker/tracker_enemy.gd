@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var enemy_data: EnemyType;
+var enemy_data: EnemyData;
 
 enum States {MOVING_TO_TARGET, TRACKING, ATTACKING};
 
@@ -9,7 +9,7 @@ var target_position: Vector2;
 var player_position: Vector2;
 var direction: Vector2;
 
-func initialize(enemy_data: EnemyType, target_position: Vector2):
+func initialize(enemy_data: EnemyData, target_position: Vector2):
 	self.enemy_data = enemy_data;
 	self.target_position = target_position;
 	## set sprite

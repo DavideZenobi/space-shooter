@@ -2,8 +2,8 @@ extends TextureProgressBar
 
 var health_component: HealthComponent;
 
-func initialize(health_component: HealthComponent):
-	self.health_component = health_component;
+func initialize(new_health_component: HealthComponent):
+	self.health_component = new_health_component;
 	value = 100;
 
 func _on_health_changed():

@@ -12,8 +12,8 @@ var max_health: int = 50;
 var speed: int = 1000;
 var direction: Vector2;
 
-func initialize(target_position: Vector2):
-	self.target_position = target_position;
+func initialize(new_target_position: Vector2):
+	self.target_position = new_target_position;
 
 func _ready():
 	health_component.initialize(max_health);

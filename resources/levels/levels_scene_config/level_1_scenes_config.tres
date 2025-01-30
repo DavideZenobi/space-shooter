@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelSceneConfig" load_steps=2 format=3 uid="uid://ckbyvgqe518y5"]
+
+[ext_resource type="Script" path="res://resources/levels/levels_scene_config/levels_scenes_config.gd" id="1_1w72o"]
+
+[resource]
+script = ExtResource("1_1w72o")
+level_number = 0
+player_type = 0
+enemy_types = Array[int]([0, 1])
+background = 0
