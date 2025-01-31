@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name TrackerEnemy extends CharacterBody2D
 
 var enemy_data: EnemyData;
 

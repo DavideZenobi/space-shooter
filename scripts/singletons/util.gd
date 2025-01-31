@@ -25,3 +25,10 @@ enum EnemyDifficulties {
 	MEDIUM,
 	HARD,
 }
+
+enum EnemyStates {
+	MOVING_TO_TARGET,
+	TRACKING,
+	ATTACKING,
+	PATROLLING,
+}
