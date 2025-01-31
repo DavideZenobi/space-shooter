@@ -27,6 +27,7 @@ enum EnemyDifficulties {
 }
 
 enum EnemyStates {
+	IDLE,
 	MOVING_TO_TARGET,
 	TRACKING,
 	ATTACKING,

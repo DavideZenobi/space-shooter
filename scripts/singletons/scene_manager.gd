@@ -28,3 +28,6 @@ func preload_level_scenes(level_number: Util.Levels):
 		print(enemy_type, " -> ", loaded_scenes.enemies[enemy_type]);
 		print(loaded_scenes.enemies[Util.EnemyTypes.LIGHTWEIGHT]);
 	
+
+func get_enemy_scene(enemy_type: Util.EnemyTypes):
+	return loaded_scenes.enemies[enemy_type];

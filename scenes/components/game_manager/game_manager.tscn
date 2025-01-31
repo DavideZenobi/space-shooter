@@ -4,3 +4,21 @@
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_ihn4s")
+
+[node name="Start" type="Timer" parent="."]
+one_shot = true
+
+[node name="EnemyCooldown" type="Timer" parent="."]
+
+[node name="Wave" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="Break" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Start" to="." method="_on_start_timeout"]
+[connection signal="timeout" from="EnemyCooldown" to="." method="_on_enemy_cooldown_timeout"]
+[connection signal="timeout" from="Wave" to="." method="_on_wave_timeout"]
+[connection signal="timeout" from="Break" to="." method="_on_break_timeout"]
