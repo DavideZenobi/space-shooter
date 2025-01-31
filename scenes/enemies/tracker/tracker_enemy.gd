@@ -9,8 +9,8 @@ var target_position: Vector2;
 var player_position: Vector2;
 var direction: Vector2;
 
-func initialize(enemy_data: EnemyData, target_position: Vector2):
-	self.enemy_data = enemy_data;
+func initialize(new_enemy_data: EnemyData, target_position: Vector2):
+	self.enemy_data = new_enemy_data;
 	self.target_position = target_position;
 	## set sprite
 	## set collisionshape

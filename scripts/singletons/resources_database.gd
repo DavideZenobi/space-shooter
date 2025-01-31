@@ -9,5 +9,13 @@ var levels: Dictionary = {
 	},
 }
 
+var enemies = {
+	Util.EnemyTypes.LIGHTWEIGHT: {
+		Util.EnemyDifficulties.EASY: "",
+		Util.EnemyDifficulties.MEDIUM: "",
+		Util.EnemyDifficulties.HARD: "",
+	}
+}
+
 func get_level_scenes_config(level_number: Util.Levels) -> Resource:
 	return levels.get(level_number).get("level_scenes_config");

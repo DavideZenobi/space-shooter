@@ -29,5 +29,5 @@ func preload_level_scenes(level_number: Util.Levels):
 		print(loaded_scenes.enemies[Util.EnemyTypes.LIGHTWEIGHT]);
 	
 
-func get_enemy_scene(enemy_type: Util.EnemyTypes):
+func get_enemy_scene(enemy_type: Util.EnemyTypes) -> PackedScene:
 	return loaded_scenes.enemies[enemy_type];
