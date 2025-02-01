@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+var character_type: Util.Characters = Util.Characters.PLAYER;
+
 @export var max_health: int = 100;
 @export var speed: int = 800;
 @export var back_speed: int = 500;

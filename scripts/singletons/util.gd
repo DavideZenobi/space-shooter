@@ -1,5 +1,11 @@
 extends Node
 
+enum Characters {
+	PLAYER,
+	ENEMY,
+	NPC,
+}
+
 enum Levels {
 	LEVEL_1,
 	LEVEL_2,
