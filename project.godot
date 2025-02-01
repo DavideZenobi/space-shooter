@@ -23,6 +23,7 @@ ScenesDatabase="*res://scripts/singletons/scenes_database.gd"
 SignalBus="*res://scripts/singletons/signal_bus.gd"
 SceneManager="*res://scripts/singletons/scene_manager.gd"
 PlayerManager="*res://scripts/singletons/player_manager.gd"
+SpawnManager="*res://scripts/singletons/spawn_manager.gd"
 
 [display]
 

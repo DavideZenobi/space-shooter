@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var max_health: int = 100;
 @export var speed: int = 800;
@@ -38,6 +38,7 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2(direction.x * speed, direction.y * speed);
 	
+	velocity = Vector2(direction.x * speed, direction.y * speed);
 	move_and_slide();
 	
 	position.x = clamp(position.x, 0 + 50, screen_size.x - 50);

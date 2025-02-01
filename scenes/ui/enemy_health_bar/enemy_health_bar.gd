@@ -1,4 +1,4 @@
-extends TextureProgressBar
+class_name EnemyHealthBar extends TextureProgressBar
 
 var health_component: HealthComponent;
 

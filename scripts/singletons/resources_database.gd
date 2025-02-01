@@ -9,12 +9,17 @@ var levels: Dictionary = {
 	},
 }
 
-var enemies = {
+var enemies: Dictionary = {
 	Util.EnemyTypes.LIGHTWEIGHT: {
-		Util.EnemyDifficulties.EASY: "",
-		Util.EnemyDifficulties.MEDIUM: "",
-		Util.EnemyDifficulties.HARD: "",
-	}
+		Util.EnemyDifficulties.EASY: load("res://resources/enemies/lightweight_easy.tres"),
+		Util.EnemyDifficulties.MEDIUM: load("res://resources/enemies/lightweight_medium.tres"),
+		Util.EnemyDifficulties.HARD: load("res://resources/enemies/lightweight_hard.tres"),
+	},
+	Util.EnemyTypes.TRACKER: {
+		Util.EnemyDifficulties.EASY: load("res://resources/enemies/tracker_easy.tres"),
+		Util.EnemyDifficulties.MEDIUM: load("res://resources/enemies/tracker_medium.tres"),
+		Util.EnemyDifficulties.HARD: load("res://resources/enemies/tracker_hard.tres"),
+	},
 }
 
 func get_level_scenes_config(level_number: Util.Levels) -> Resource:

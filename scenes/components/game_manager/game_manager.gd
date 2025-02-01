@@ -9,18 +9,32 @@ var current_level: Util.Levels;
 @onready var wave_timer: Timer = $Wave;
 @onready var break_timer: Timer = $Break;
 
+var enemy_manager: EnemyManager;
+
 func _ready():
+	enemy_manager = EnemyManager.new();
 	start_timer.start();
 
-func spawn_random_enemy():
-	var random_enemy_type = Util.EnemyTypes.values()[randi_range(0, Util.EnemyTypes.size() - 1)];
+func initialize():
+	
+	pass;
 
-	if random_enemy_type != Util.EnemyTypes.TRACKER:
-		return;
-	var new_enemy_scene = SceneManager.get_enemy_scene(random_enemy_type);
-	var new_enemy = new_enemy_scene.instantiate();
+func spawn_random_enemy():
+	## Get random enemy type and difficulty
+	var random_enemy_type = Util.EnemyTypes.values()[randi_range(0, Util.EnemyTypes.size() - 1)];
+	var random_enemy_difficulty = Util.EnemyDifficulties.values()[randi_range(0, Util.EnemyDifficulties.size() - 1)];
+	
+	## Get enemy instance
+	var new_enemy = enemy_manager.create_enemy(Util.EnemyTypes.TRACKER, random_enemy_difficulty);
+	
+	## Add enemy to the tree
 	get_tree().root.add_child(new_enemy);
-	new_enemy.global_position = Vector2(randi_range(0, 1920), randi_range(0, 1080));
+	new_enemy.initialize();
+	new_enemy.global_position = Vector2(randi_range(0 + 50, 1280 - 50), randi_range(0 + 50, 720 - 50));
+
+func spawn_bullet():
+	
+	pass;
 
 func load_level_data():
 	

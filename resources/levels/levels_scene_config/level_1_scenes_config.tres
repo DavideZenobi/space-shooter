@@ -5,6 +5,8 @@
 [resource]
 script = ExtResource("1_1w72o")
 level_number = 0
-player_type = 0
-enemy_types = Array[int]([0, 1])
 background = 0
+player_type = 0
+player_bullets_types = Array[int]([0])
+enemy_types = Array[int]([0, 1])
+enemy_bullets_types = Array[int]([0])

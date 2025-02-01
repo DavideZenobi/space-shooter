@@ -2,8 +2,9 @@ extends Resource;
 class_name LevelSceneConfig;
 
 @export var level_number: Util.Levels;
-@export var player_type: Util.PlayerTypes;
-@export var enemy_types: Array[Util.EnemyTypes];
 @export var background: Util.Backgrounds;
-## bullets
+@export var player_type: Util.PlayerTypes;
+@export var player_bullets_types: Array[Util.PlayerBullets];
+@export var enemy_types: Array[Util.EnemyTypes];
+@export var enemy_bullets_types: Array[Util.EnemyBullets];
 ## items

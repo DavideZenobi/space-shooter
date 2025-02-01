@@ -11,13 +11,13 @@ func _physics_process(delta: float) -> void:
 func _on_screen_exited():
 	queue_free();
 
-func _on_body_entered(body: Node2D):
+func _on_hitbox_area_entered(area: Area2D):
 	if has_collided:
 		return;
 	
 	var attack = Attack.new();
 	attack.damage = self.damage;
-	body.get_node("HealthComponent").damage(attack);
+	area.get_parent().get_node("HealthComponent").damage(attack);
 	
 	has_collided = true;
 	queue_free();

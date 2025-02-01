@@ -8,20 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://dd2maeqfnn4xb" path="res://scenes/components/health_component/health_component.tscn" id="5_vqb5c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amox1"]
-size = Vector2(100, 74)
+size = Vector2(76, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xphjp"]
-size = Vector2(100, 74)
+size = Vector2(76, 98)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 10
 motion_mode = 1
 script = ExtResource("1_34q10")
-max_health = null
-speed = null
-back_speed = null
 current_bullet = ExtResource("2_xchlo")
-fire_rate = null
-max_ammo = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
@@ -39,7 +35,7 @@ one_shot = true
 shape = SubResource("RectangleShape2D_amox1")
 
 [node name="BulletSpawnMark" type="Marker2D" parent="."]
-position = Vector2(50, 0)
+position = Vector2(38, 0)
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 10
@@ -55,7 +51,6 @@ pitch_scale = 2.0
 [node name="HealthComponent" parent="." instance=ExtResource("5_vqb5c")]
 
 [node name="ReloadCooldown" type="Timer" parent="."]
-wait_time = 1.5
 one_shot = true
 
 [node name="Reload" type="Timer" parent="."]

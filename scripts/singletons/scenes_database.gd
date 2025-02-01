@@ -9,4 +9,10 @@ var enemies: Dictionary = {
 	Util.EnemyTypes.TRACKER: "res://scenes/enemies/tracker/tracker_enemy.tscn",
 };
 
-# var weapons
+var player_bullets: Dictionary = {
+	Util.PlayerBullets.BASIC: "",
+}
+
+var enemy_bullets: Dictionary = {
+	Util.EnemyBullets.BASIC: "",
+};

@@ -1,12 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsnhdu03k2e1s"]
+[gd_scene load_steps=4 format=3 uid="uid://bsnhdu03k2e1s"]
 
 [ext_resource type="Script" path="res://scenes/enemies/tracker/tracker_enemy.gd" id="1_pk8mn"]
+[ext_resource type="PackedScene" uid="uid://dd2maeqfnn4xb" path="res://scenes/components/health_component/health_component.tscn" id="2_dld67"]
+[ext_resource type="PackedScene" uid="uid://bmb0q0yhpcb55" path="res://scenes/ui/enemy_health_bar/enemy_health_bar.tscn" id="2_vueub"]
 
-[node name="TrackerEnemy" type="CharacterBody2D"]
+[node name="TrackerEnemy" type="Node2D"]
 script = ExtResource("1_pk8mn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+rotation = -1.5708
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_dld67")]
+
+[node name="BulletSpawn" type="Marker2D" parent="."]
+
+[node name="EnemyHealthBar" parent="." instance=ExtResource("2_vueub")]
+offset_left = 44.0
+offset_top = 48.0
+offset_right = 140.0
+offset_bottom = 64.0
+rotation = -1.5708
+
+[connection signal="health_changed" from="HealthComponent" to="EnemyHealthBar" method="_on_health_changed"]

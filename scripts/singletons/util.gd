@@ -20,6 +20,16 @@ enum EnemyTypes {
 	BOMBARDIER,
 }
 
+enum PlayerBullets {
+	BASIC,
+	
+}
+
+enum EnemyBullets {
+	BASIC,
+	
+}
+
 enum EnemyDifficulties {
 	EASY,
 	MEDIUM,
