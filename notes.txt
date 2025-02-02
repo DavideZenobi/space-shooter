@@ -14,4 +14,8 @@ NOTAS DEL PROYECTO
 	Si se hiciese una escena también por cada dificultad, no haría falta añadir
 	la textura en el código.
 
+- REMEMBER: El GameManager que yo tengo en realidad es un LevelManager y no deberia ser 
+un nodo mas dentro del arbol general, si no que es un script y va al nodo raiz,
+que siempre sera un level + el numero del nivel (level1, level2, etc).
+
 IDEAS PARA EL FUTURO

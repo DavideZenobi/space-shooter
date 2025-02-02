@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7eeo37r0hsa5"]
+[gd_scene load_steps=6 format=3 uid="uid://b7eeo37r0hsa5"]
 
 [ext_resource type="PackedScene" uid="uid://bfklob58ogw14" path="res://scenes/player/player.tscn" id="1_ty1gb"]
 [ext_resource type="PackedScene" uid="uid://cyr6ndvweuq10" path="res://scenes/backgrounds/parallax.tscn" id="2_wangi"]
 [ext_resource type="PackedScene" uid="uid://b7ug7b0trm8tc" path="res://scenes/ui/hud/hud.tscn" id="4_fuumm"]
+[ext_resource type="PackedScene" uid="uid://c3thbwdx73idc" path="res://scenes/systems/spawn_manager/enemy_spawn_path.tscn" id="5_4pdtd"]
 [ext_resource type="PackedScene" uid="uid://ccdr0r55og5y4" path="res://scenes/components/game_manager/game_manager.tscn" id="5_33nhm"]
 
 [node name="Level1" type="Node"]
@@ -16,5 +17,7 @@ position = Vector2(577, 540)
 player = NodePath("../Player")
 
 [node name="GameManager" parent="." instance=ExtResource("5_33nhm")]
+
+[node name="EnemySpawnerPath" parent="." instance=ExtResource("5_4pdtd")]
 
 [connection signal="ammo_changed" from="Player" to="Hud" method="_update_ammo"]
