@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=3 format=3 uid="uid://4n2my561k348"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://4n2my561k348"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemy_data.gd" id="1_fc2ro"]
 [ext_resource type="Texture2D" uid="uid://df5v8ibmxm1gd" path="res://assets/enemy_ships/enemyBlack1.png" id="2_qaopr"]
@@ -9,4 +9,6 @@ type = 0
 difficulty = 2
 sprite = ExtResource("2_qaopr")
 health = 50
+bullet = 0
 damage = 25
+speed = 1000

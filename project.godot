@@ -18,18 +18,20 @@ config/icon="res://icon.svg"
 [autoload]
 
 Util="*res://scripts/singletons/util.gd"
-ResourcesDatabase="*res://scripts/singletons/resources_database.gd"
-ScenesDatabase="*res://scripts/singletons/scenes_database.gd"
-TexturesDatabase="*res://scripts/singletons/textures_database.gd"
+ResourcesDatabase="*res://scripts/databases/resources_database.gd"
+ScenesDatabase="*res://scripts/databases/scenes_database.gd"
+TexturesDatabase="*res://scripts/databases/textures_database.gd"
 SignalBus="*res://scripts/singletons/signal_bus.gd"
 SceneManager="*res://scripts/singletons/scene_manager.gd"
 PlayerManager="*res://scripts/singletons/player_manager.gd"
 SpawnManager="*res://scripts/singletons/spawn_manager.gd"
+AudioManager="*res://scripts/singletons/audio_manager.gd"
+AudioDatabase="*res://scripts/databases/audio_database.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [dotnet]
 

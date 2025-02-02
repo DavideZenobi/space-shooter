@@ -27,3 +27,6 @@ func initialize():
 	
 	health_component.initialize(enemy_data.health);
 	health_bar.initialize(health_component);
+
+func hitted(attack: Attack):
+	health_component.damage(attack);

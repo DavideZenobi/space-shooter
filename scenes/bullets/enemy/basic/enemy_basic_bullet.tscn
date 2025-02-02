@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2rldvr5jcxbo"]
+
+[ext_resource type="Texture2D" uid="uid://bs1qaw4py4hwh" path="res://assets/enemy_bullets/laserRed01.png" id="1_4d635"]
+[ext_resource type="Script" path="res://scenes/bullets/bullet.gd" id="1_n4xvk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5aa4"]
+size = Vector2(53, 8)
+
+[node name="EnemyBasicBullet" type="Node2D"]
+script = ExtResource("1_n4xvk")
+damage = 10
+speed = 3000
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_4d635")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_u5aa4")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

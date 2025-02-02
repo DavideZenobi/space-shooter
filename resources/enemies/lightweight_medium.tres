@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=3 format=3 uid="uid://caw5nn5m1d0g"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://caw5nn5m1d0g"]
 
 [ext_resource type="Script" path="res://resources/enemies/enemy_data.gd" id="1_fpq08"]
 [ext_resource type="Texture2D" uid="uid://biw5vim545olu" path="res://assets/enemy_ships/enemyGreen1.png" id="2_piwjv"]
@@ -9,4 +9,6 @@ type = 0
 difficulty = 1
 sprite = ExtResource("2_piwjv")
 health = 30
+bullet = 0
 damage = 15
+speed = 1000

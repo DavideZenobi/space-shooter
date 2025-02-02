@@ -28,4 +28,11 @@ offset_right = 140.0
 offset_bottom = 64.0
 rotation = -1.5708
 
+[node name="StartMoving" type="Timer" parent="."]
+one_shot = true
+
+[node name="Shoot" type="Timer" parent="."]
+
 [connection signal="health_changed" from="HealthComponent" to="EnemyHealthBar" method="_on_health_changed"]
+[connection signal="timeout" from="StartMoving" to="." method="_on_start_moving_timeout"]
+[connection signal="timeout" from="Shoot" to="." method="_on_shoot_timeout"]

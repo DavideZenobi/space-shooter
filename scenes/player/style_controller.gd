@@ -6,6 +6,7 @@ extends Sprite2D
 
 
 func _on_taken_damage():
+	print("hey")
 	blink_duration.start();
 	blink_interval.start();
 	modulate = Color.INDIAN_RED;
@@ -20,6 +21,7 @@ func _stop_blink_effect():
 	modulate = Color(1, 1, 1, 1);
 
 func _alternate_blink_effect():
+	
 	if modulate.a == 1:
 		modulate.a = 0.2;
 	else:

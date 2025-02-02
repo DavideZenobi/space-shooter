@@ -30,7 +30,7 @@ func spawn_random_enemy():
 	## Add enemy to the tree
 	get_tree().root.add_child(new_enemy);
 	new_enemy.initialize();
-	new_enemy.global_position = Vector2(randi_range(0 + 50, 1280 - 50), randi_range(0 + 50, 720 - 50));
+	new_enemy.global_position = Vector2(randi_range(-1280 + 50, 0 - 50), randi_range(-720 + 50, 0 - 50));
 
 func spawn_bullet():
 	

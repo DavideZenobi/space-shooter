@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://baov6ngi77hwr"]
+
+[node name="PlayerBasicBullet" type="Node2D"]

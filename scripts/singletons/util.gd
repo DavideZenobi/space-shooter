@@ -15,6 +15,19 @@ enum Levels {
 
 enum PlayerTypes { BASIC }
 
+enum PlayerStates {
+	NORMAL,
+	INVINCIBLE,
+}
+
+enum PlayerEvents {
+	SHOOT,
+	DAMAGE_TAKEN,
+	HEALING_TAKEN,
+	POWER_UP_TAKEN,
+	DIE,
+}
+
 enum Backgrounds {
 	BASIC,
 }
@@ -24,6 +37,11 @@ enum EnemyTypes {
 	TRACKER,
 	TANK,
 	BOMBARDIER,
+}
+
+enum AttackTypes {
+	BULLET,
+	SHIP,
 }
 
 enum PlayerBullets {
