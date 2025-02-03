@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7eeo37r0hsa5"]
+[gd_scene load_steps=7 format=3 uid="uid://b7eeo37r0hsa5"]
 
 [ext_resource type="PackedScene" uid="uid://bfklob58ogw14" path="res://scenes/player/player.tscn" id="1_ty1gb"]
+[ext_resource type="Script" path="res://scenes/levels/level_controller.gd" id="1_uvjbv"]
 [ext_resource type="PackedScene" uid="uid://cyr6ndvweuq10" path="res://scenes/backgrounds/parallax.tscn" id="2_wangi"]
 [ext_resource type="PackedScene" uid="uid://b7ug7b0trm8tc" path="res://scenes/ui/hud/hud.tscn" id="4_fuumm"]
-[ext_resource type="PackedScene" uid="uid://c3thbwdx73idc" path="res://scenes/systems/spawn_manager/enemy_spawn_path.tscn" id="5_4pdtd"]
+[ext_resource type="PackedScene" uid="uid://c3thbwdx73idc" path="res://scenes/systems/enemy_spawn_system/enemy_spawn_path.tscn" id="5_4pdtd"]
 [ext_resource type="PackedScene" uid="uid://ccdr0r55og5y4" path="res://scenes/components/game_manager/game_manager.tscn" id="5_33nhm"]
 
 [node name="Level1" type="Node"]
+script = ExtResource("1_uvjbv")
 
 [node name="Parallax" parent="." instance=ExtResource("2_wangi")]
 
@@ -18,6 +20,14 @@ player = NodePath("../Player")
 
 [node name="GameManager" parent="." instance=ExtResource("5_33nhm")]
 
-[node name="EnemySpawnerPath" parent="." instance=ExtResource("5_4pdtd")]
+[node name="EnemySpawnPath" parent="." instance=ExtResource("5_4pdtd")]
+
+[node name="Intro" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Countdown" type="Timer" parent="."]
 
 [connection signal="ammo_changed" from="Player" to="Hud" method="_update_ammo"]
+[connection signal="timeout" from="Intro" to="." method="_on_intro_timeout"]
+[connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]

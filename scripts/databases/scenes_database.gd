@@ -10,7 +10,7 @@ var enemies: Dictionary = {
 };
 
 var player_bullets: Dictionary = {
-	Util.PlayerBullets.BASIC: "",
+	Util.PlayerBullets.BASIC: "res://scenes/bullets/player/basic/player_basic_bullet.tscn",
 }
 
 var enemy_bullets: Dictionary = {

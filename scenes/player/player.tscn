@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_34q10"]
 [ext_resource type="Texture2D" uid="uid://bmsqfp7dmatrj" path="res://assets/player_ships/playerShip1_blue.png" id="2_otj2q"]
-[ext_resource type="PackedScene" uid="uid://d2otvq5dhogy4" path="res://scenes/bullets/player_normal_bullet.tscn" id="2_xchlo"]
 [ext_resource type="Script" path="res://scenes/player/style_controller.gd" id="4_u0awx"]
+[ext_resource type="Script" path="res://scenes/player/bullet_manager.gd" id="5_mnbwy"]
 [ext_resource type="Script" path="res://scenes/player/health.gd" id="5_syare"]
 [ext_resource type="Script" path="res://scenes/player/audio.gd" id="7_74s3c"]
 
@@ -17,7 +17,6 @@ size = Vector2(76, 98)
 collision_mask = 10
 motion_mode = 1
 script = ExtResource("1_34q10")
-current_bullet = ExtResource("2_xchlo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
@@ -35,6 +34,7 @@ shape = SubResource("RectangleShape2D_amox1")
 
 [node name="BulletSpawnMark" type="Marker2D" parent="."]
 position = Vector2(38, 0)
+script = ExtResource("5_mnbwy")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 10

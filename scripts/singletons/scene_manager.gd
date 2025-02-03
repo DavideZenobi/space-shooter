@@ -11,6 +11,9 @@ var current_scene: PackedScene;
 func _ready():
 	preload_level_scenes(Util.Levels.LEVEL_1);
 
+func get_player_bullet_scene(bullet_type: Util.PlayerBullets) -> PackedScene:
+	return loaded_scenes.player_bullets[bullet_type];
+
 func spawn_player_bullet(bullet_scene, position, rotation):
 	var scene_instance = bullet_scene.instantiate();
 	get_tree().current_scene.add_child(scene_instance);
@@ -36,7 +39,7 @@ func preload_level_scenes(level_number: Util.Levels):
 	for player_bullet_type in level_scenes_config.player_bullets_types:
 		var player_bullet_scene_path = ScenesDatabase.player_bullets[player_bullet_type];
 		loaded_scenes.player_bullets[player_bullet_type] = load(player_bullet_scene_path);
-	
+
 	## Load enemy bullets
 	for enemy_bullet_type in level_scenes_config.enemy_bullets_types:
 		var enemy_bullet_scene_path = ScenesDatabase.enemy_bullets[enemy_bullet_type];
@@ -44,3 +47,9 @@ func preload_level_scenes(level_number: Util.Levels):
 
 func get_enemy_scene(enemy_type: Util.EnemyTypes) -> PackedScene:
 	return loaded_scenes.enemies[enemy_type];
+
+func unload_level_scenes():
+	## TODO
+	## "scene.free()"
+	## loaded_scenes.clear()
+	pass;

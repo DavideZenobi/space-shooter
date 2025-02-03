@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3thbwdx73idc"]
 
-[ext_resource type="Script" path="res://scenes/systems/spawn_manager/enemy_spawn_system.gd" id="1_iqhs7"]
+[ext_resource type="Script" path="res://scenes/systems/enemy_spawn_system/enemy_spawn_location.gd" id="1_iqhs7"]
 
 [sub_resource type="Curve2D" id="Curve2D_71kxl"]
 _data = {

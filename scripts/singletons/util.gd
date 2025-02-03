@@ -13,6 +13,12 @@ enum Levels {
 	LEVEL_4,
 }
 
+enum LevelPhases {
+	INTRO,
+	WAVE,
+	BOSS,
+}
+
 enum PlayerTypes { BASIC }
 
 enum PlayerStates {

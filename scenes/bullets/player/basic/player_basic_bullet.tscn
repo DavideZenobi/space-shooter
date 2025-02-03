@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://baov6ngi77hwr"]
+[gd_scene load_steps=4 format=3 uid="uid://baov6ngi77hwr"]
+
+[ext_resource type="Script" path="res://scenes/bullets/bullet.gd" id="1_ibygv"]
+[ext_resource type="Texture2D" uid="uid://b8luged6pgda2" path="res://assets/player_bullets/laserBlue01.png" id="1_jsbys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72xig"]
+size = Vector2(54, 8)
 
 [node name="PlayerBasicBullet" type="Node2D"]
+script = ExtResource("1_ibygv")
+damage = 10
+speed = 3000
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_jsbys")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_72xig")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
