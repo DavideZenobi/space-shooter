@@ -15,6 +15,7 @@ enum Levels {
 
 enum LevelPhases {
 	INTRO,
+	ONGOING,
 	WAVE,
 	BOSS,
 }

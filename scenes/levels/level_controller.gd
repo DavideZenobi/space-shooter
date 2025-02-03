@@ -14,11 +14,12 @@ func _ready():
 	level_phase = Util.LevelPhases.INTRO;
 	intro.start();
 
-
+func start():
+	level_phase = Util.LevelPhases.ONGOING;
+	
 
 func _on_intro_timeout():
-	
-	pass;
+	start();
 
 func _on_countdown_timeout():
 	
