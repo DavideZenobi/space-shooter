@@ -27,7 +27,6 @@ func create_wave():
 func _on_intro_timeout():
 	Logger.print_in_console("Intro finished!");
 	start();
-	
 
 func _on_countdown_timeout():
 	create_wave();

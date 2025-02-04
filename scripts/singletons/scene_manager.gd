@@ -6,7 +6,6 @@ var loaded_scenes = {
 	player_bullets = {},
 	enemy_bullets = {},
 };
-var current_scene: PackedScene;
 
 func _ready():
 	preload_level_scenes(Util.Levels.LEVEL_1);
@@ -17,7 +16,7 @@ func get_player_bullet_scene(bullet_type: Util.PlayerBullets) -> PackedScene:
 func spawn_enemy_bullet(bullet_type, position, rotation):
 	var bullet_scene = loaded_scenes.enemy_bullets[bullet_type];
 	var bullet_instance = bullet_scene.instantiate();
-	get_tree().current_scene.add_child(bullet_instance);
+	get_tree().root.add_child(bullet_instance);
 	bullet_instance.global_position = position;
 	bullet_instance.rotation = rotation;
 
