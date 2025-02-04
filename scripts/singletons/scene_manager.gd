@@ -14,12 +14,6 @@ func _ready():
 func get_player_bullet_scene(bullet_type: Util.PlayerBullets) -> PackedScene:
 	return loaded_scenes.player_bullets[bullet_type];
 
-func spawn_player_bullet(bullet_scene, position, rotation):
-	var scene_instance = bullet_scene.instantiate();
-	get_tree().current_scene.add_child(scene_instance);
-	scene_instance.global_transform.origin = position;
-	scene_instance.rotation = rotation;
-
 func spawn_enemy_bullet(bullet_type, position, rotation):
 	var bullet_scene = loaded_scenes.enemy_bullets[bullet_type];
 	var bullet_instance = bullet_scene.instantiate();

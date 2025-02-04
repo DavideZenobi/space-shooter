@@ -1,11 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://d304dd6frdjxf"]
+[gd_scene load_steps=3 format=3 uid="uid://d304dd6frdjxf"]
 
 [ext_resource type="Script" path="res://scenes/systems/enemy_spawn_system/enemy_spawn_system.gd" id="1_ppb8e"]
+[ext_resource type="Script" path="res://scenes/systems/enemy_spawn_system/path_2d.gd" id="2_edd6m"]
 
 [node name="EnemySpawnSystem" type="Node"]
 script = ExtResource("1_ppb8e")
 
 [node name="SpawnTrackerEnemy" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="Path2D" type="Path2D" parent="."]
+script = ExtResource("2_edd6m")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 
 [connection signal="timeout" from="SpawnTrackerEnemy" to="." method="_on_spawn_tracker_enemy_timeout"]

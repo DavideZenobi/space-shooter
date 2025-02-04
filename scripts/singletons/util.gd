@@ -67,6 +67,11 @@ enum EnemyDifficulties {
 	HARD,
 }
 
+enum EnemyBehaviour {
+	SOLO,
+	PATROL,
+}
+
 enum EnemyStates {
 	IDLE,
 	MOVING_TO_TARGET,

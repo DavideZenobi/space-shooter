@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="LevelSceneConfig" load_steps=2 format=3 uid="uid://ckbyvgqe518y5"]
+[gd_resource type="Resource" script_class="LevelSceneConfig" load_steps=4 format=3 uid="uid://ckbyvgqe518y5"]
 
 [ext_resource type="Script" path="res://resources/levels/levels_scene_config/levels_scenes_config.gd" id="1_1w72o"]
+[ext_resource type="Curve2D" uid="uid://10q0lpced05o" path="res://resources/pathings/lightweight/mid_left_to_right.tres" id="1_hixsf"]
+[ext_resource type="Curve2D" uid="uid://ct6uayvfrd1ym" path="res://resources/pathings/tracker/rectangle.tres" id="3_r1p7v"]
 
 [resource]
 script = ExtResource("1_1w72o")
@@ -10,3 +12,5 @@ player_type = 0
 player_bullets_types = Array[int]([0])
 enemy_types = Array[int]([0, 1])
 enemy_bullets_types = Array[int]([0])
+tracker_curves = Array[Curve2D]([ExtResource("3_r1p7v")])
+lightweight_curves = Array[Curve2D]([ExtResource("1_hixsf")])

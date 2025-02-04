@@ -27,6 +27,7 @@ PlayerManager="*res://scripts/singletons/player_manager.gd"
 SpawnManager="*res://scripts/singletons/spawn_manager.gd"
 AudioManager="*res://scripts/singletons/audio_manager.gd"
 AudioDatabase="*res://scripts/databases/audio_database.gd"
+Logger="*res://scripts/singletons/logger.gd"
 
 [display]
 

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bkfvnl1lv45b1"]
+
+[node name="Path2d" type="Path2D"]

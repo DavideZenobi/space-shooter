@@ -1,5 +1,6 @@
-extends Node
+class_name EnemySpawnSystem extends Node
 
+@onready var path2d: Path2D = $Path2D;
 @onready var spawn_tracker_enemy_timer: Timer = $SpawnTrackerEnemy;
 var max_trackers: int = 10;
 var trackers_count: int = 0;
